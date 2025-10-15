@@ -1,41 +1,40 @@
-import { useRef, useState } from "react";
-import ProductCard from "./ProductCard";
+import { Children, useRef, useState } from "react";
 import SliderButton from "../common/SliderButton";
 
-const ProductCarousel = () => {
-  const [current, setCurrent] = useState(1);
+const ProductCarousel = ({ children }: { children: React.ReactElement[] }) => {
+  const [current, setCurrent] = useState(0);
+
   const containerRef = useRef<HTMLDivElement>(null);
-  const countRef = useRef<number>(null);
+  const indexRef = useRef<number>(null);
+
+  const cards = 4;
+  const gap = 14 * cards;
 
   const getContainerData = () => {
-    const cards = 4;
-    const gap = 14 * cards;
-    if (!containerRef.current)
-      return { cards, gap, container: null, cardWidth: 0 };
+    if (!containerRef.current) return { container: null, cardWidth: 0 };
 
     const container = containerRef.current;
     const cardWidth =
       parseInt(container.style.getPropertyValue("--card-width")) * cards || 0;
 
-    return { container, gap, cardWidth, cards };
+    return { container, cardWidth };
   };
 
   const buttonHandler = (i: number) => {
     setCurrent(i);
 
-    const { cardWidth, gap, container } = getContainerData();
+    const { cardWidth, container } = getContainerData();
     if (container) container.scroll({ left: (cardWidth + gap) * i });
   };
 
-  const scrollHandler = (e: React.UIEvent<HTMLDivElement>) => {
+  const scrollEndHandler = (e: React.UIEvent<HTMLDivElement>) => {
     const div = e.target as HTMLDivElement;
     const scrollLeft = div.scrollLeft;
 
-    const { cardWidth, gap } = getContainerData();
-    const index = Math.round(scrollLeft / (cardWidth + gap));
-    console.log(index);
-    if (countRef.current !== index) setCurrent(index);
-    countRef.current = index;
+    const { cardWidth } = getContainerData();
+    const index = Math.ceil(scrollLeft / (cardWidth + gap));
+    if (indexRef.current !== index) setCurrent(index);
+    indexRef.current = index;
   };
 
   return (
@@ -49,34 +48,49 @@ const ProductCarousel = () => {
             "--container-height": "560px",
           } as React.CSSProperties
         }
-        onScrollEnd={scrollHandler}
+        onScrollEnd={scrollEndHandler}
       >
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {children}
       </div>
 
       {/* carousel action button */}
       <div className="flex gap-1 justify-center items-center mt-8">
-        {[0, 1, 2].map((i) => (
-          <SliderButton
-            key={i}
-            active={current === i}
-            onClick={() => buttonHandler(i)}
-          />
-        ))}
+        {createSliderButton({
+          current,
+          buttonHandler,
+          cards,
+          count: Children.count(children),
+        })}
       </div>
     </div>
   );
+};
+
+// create carousel buttons dynamically
+const createSliderButton = ({
+  count,
+  cards,
+  current,
+  buttonHandler,
+}: {
+  count: number;
+  cards: number;
+  current: number;
+  buttonHandler: (i: number) => void;
+}) => {
+  const totalButton = Math.ceil(count / cards) - 1;
+
+  const buttons = [];
+  for (let i = 0; i <= totalButton; i++) {
+    buttons.push(
+      <SliderButton
+        key={i}
+        active={current === i}
+        onClick={() => buttonHandler(i)}
+      />,
+    );
+  }
+  return buttons;
 };
 
 export default ProductCarousel;
