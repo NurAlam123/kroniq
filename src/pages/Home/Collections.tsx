@@ -2,7 +2,7 @@ import Image from "../../components/common/Image";
 import SliderButton from "../../components/common/SliderButton";
 import Title from "../../components/common/Title";
 
-const Collection = () => {
+const Collections = () => {
   return (
     <div className="py-[88px] space-y-10">
       <Title
@@ -63,4 +63,4 @@ const CollectionCard = ({
   );
 };
 
-export default Collection;
+export default Collections;

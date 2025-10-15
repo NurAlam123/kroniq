@@ -1,6 +1,6 @@
 import Navbar from "./components/layout/Navbar";
 import BrandInfo from "./pages/Home/BrandInfo";
-import Collection from "./pages/Home/Collection";
+import Collections from "./pages/Home/Collections";
 import Hero from "./pages/Home/Hero";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Hero />
       <div className="max-screen">
         <BrandInfo />
-        <Collection />
+        <Collections />
       </div>
     </div>
   );
