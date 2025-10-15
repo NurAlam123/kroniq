@@ -1,7 +1,11 @@
 import { Children, useRef, useState } from "react";
 import SliderButton from "../common/SliderButton";
 
-const ProductCarousel = ({ children }: { children: React.ReactElement[] }) => {
+const ProductCarousel = ({
+  children,
+}: {
+  children: React.ReactElement[] | React.ReactElement;
+}) => {
   const [current, setCurrent] = useState(0);
 
   const containerRef = useRef<HTMLDivElement>(null);
