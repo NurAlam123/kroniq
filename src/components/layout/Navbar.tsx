@@ -1,4 +1,4 @@
-import Image from "./shared/Image";
+import Image from "../common/Image";
 
 const Navbar = () => {
   return (
