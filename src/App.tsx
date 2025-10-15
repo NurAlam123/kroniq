@@ -1,3 +1,4 @@
+import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
 import BestSellers from "./pages/Home/BestSellers";
 import BrandInfo from "./pages/Home/BrandInfo";
@@ -18,6 +19,7 @@ function App() {
         <BestSellers />
         <CallToAction />
       </div>
+      <Footer />
     </div>
   );
 }

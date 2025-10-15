@@ -1,3 +1,4 @@
+import Logo from "../../assets/Logo";
 import Image from "../common/Image";
 
 const Navbar = () => {
@@ -5,22 +6,11 @@ const Navbar = () => {
     <div className="bg-white border-b border-[#e5e7eb]">
       <div className="@container max-screen">
         <div className="h-[100px] flex items-center @max-max:px-[120px] justify-between">
-          <NavbarLogo />
+          <Logo />
           <SearchBar />
           <ActionButton />
         </div>
       </div>
-    </div>
-  );
-};
-
-const NavbarLogo = () => {
-  return (
-    <div className="w-fit select-none mx-2">
-      <p className="font-semibold text-[34px] -tracking-[3px] leading-8 uppercase">
-        CHRONOS
-      </p>
-      <p className="text-sm text-end leading-2 tracking-tighter">eCommerce</p>
     </div>
   );
 };
