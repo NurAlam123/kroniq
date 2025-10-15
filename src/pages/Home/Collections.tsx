@@ -1,10 +1,10 @@
+import FeatureBox from "../../components/common/FeatureBox";
 import Image from "../../components/common/Image";
-import SliderButton from "../../components/common/SliderButton";
 import Title from "../../components/common/Title";
 
 const Collections = () => {
   return (
-    <div className="py-[88px] space-y-10">
+    <FeatureBox>
       <Title
         title="Start exploring."
         subtitle="Good things are waiting for you"
@@ -23,15 +23,7 @@ const Collections = () => {
           href="#"
         />
       </div>
-
-      <div className="flex gap-1 justify-center items-center">
-        <SliderButton active />
-        <SliderButton />
-        <SliderButton />
-        <SliderButton />
-        <SliderButton />
-      </div>
-    </div>
+    </FeatureBox>
   );
 };
 
