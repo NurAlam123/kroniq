@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@theme {
+  --container-max: 1536px;
+}
+
 :root {
   font-family: "Poppins", sans-serif;
+}
+
+@layer components {
+  .max-screen {
+    max-width: 1536px;
+    margin-inline: auto;
+  }
 }
