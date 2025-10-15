@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <h1>Chronos</h1>
+      <h1 className="text-2xl font-medium">Chronos</h1>
     </>
   );
 }
