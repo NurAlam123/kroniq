@@ -31,6 +31,7 @@ const SearchBar = () => {
       <div>
         <Image
           src="/icons/search.svg"
+          alt="search icon"
           width={24}
           height={24}
           className="size-6 aspect-square"
@@ -50,10 +51,10 @@ const ActionButton = () => {
   return (
     <div className="flex items-center gap-6 justify-center">
       <button>
-        <Image src="/icons/user.svg" width={24} height={24} />
+        <Image src="/icons/user.svg" alt="user icon" width={24} height={24} />
       </button>
       <button className="relative">
-        <Image src="/icons/cart.svg" width={24} height={24} />
+        <Image src="/icons/cart.svg" alt="cart icon" width={24} height={24} />
         <span className="absolute -top-2 -right-2 w-5 h-5 bg-blue-500 rounded-full text-white text-xs flex items-center justify-center font-medium">
           3
         </span>

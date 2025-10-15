@@ -6,7 +6,11 @@ const Hero = () => {
   return (
     <div className="h-[600px] relative">
       <div className="absolute h-full w-full -z-10 pointer-events-none">
-        <Image src="/hero-bg.png" className="mx-auto h-full object-contain" />
+        <Image
+          src="/hero-bg.png"
+          alt="hero banner"
+          className="mx-auto h-full object-contain"
+        />
       </div>
 
       <div className="max-screen w-full h-full flex items-center justify-start">
