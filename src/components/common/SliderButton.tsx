@@ -1,7 +1,13 @@
-const SliderButton = ({ active = false }: { active?: boolean }) => {
+import type { ButtonHTMLAttributes } from "react";
+
+const SliderButton = ({
+  active = false,
+  ...props
+}: { active?: boolean } & ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <button
-      className={`size-2 rounded-full ${active ? "bg-[#111827]" : "bg-[#111827]/50"}`}
+      className={`size-4 rounded-full ${active ? "bg-[#111827]" : "bg-[#111827]/50"}`}
+      {...props}
     ></button>
   );
 };
