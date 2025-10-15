@@ -18,9 +18,9 @@ const Hero = () => {
           <p className="text-[20px]/[28px] font-medium text-[#4b5563]">
             Starting from: $49.99
           </p>
-          <p className="text-[64px]/[72px] font-semibold">
+          <h1 className="text-[64px]/[72px] font-semibold">
             Exclusive collection for everyone
-          </p>
+          </h1>
           <Button className="gap-[10px] px-9">
             <span>Explore</span>
             <SearchIcon />

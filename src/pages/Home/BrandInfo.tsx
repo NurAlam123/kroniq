@@ -2,7 +2,7 @@ import Image from "../../components/common/Image";
 
 const BrandInfo = () => {
   return (
-    <div className="max-screen h-[182] py-[52px]">
+    <div className="h-[182] py-[52px]">
       <div className="border rounded-[16px] border-[#e5e7eb] flex px-10 py-6 justify-between divide-x divide-[#E5E7EB]">
         <BrandInfoCard
           src="/icons/truck.svg"
