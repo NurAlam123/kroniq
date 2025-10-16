@@ -1,6 +1,6 @@
-import SearchIcon from "../../assets/icons/Search";
-import Button from "../../components/common/Button";
-import Image from "../../components/common/Image";
+import SearchIcon from "../../../assets/icons/Search";
+import Button from "../../../components/common/Button";
+import Image from "../../../components/common/Image";
 
 const Hero = () => {
   return (

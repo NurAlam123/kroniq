@@ -1,5 +1,5 @@
-import Button from "../../components/common/Button";
-import Image from "../../components/common/Image";
+import Button from "../../../components/common/Button";
+import Image from "../../../components/common/Image";
 
 const CallToAction = () => {
   return (

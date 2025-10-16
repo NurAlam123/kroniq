@@ -1,4 +1,4 @@
-import Image from "../../components/common/Image";
+import Image from "../../../components/common/Image";
 
 const BrandInfo = () => {
   return (

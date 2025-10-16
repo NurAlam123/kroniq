@@ -1,7 +1,7 @@
-import FeatureBox from "../../components/common/FeatureBox";
-import Title from "../../components/common/Title";
-import ProductCard from "../../components/product/ProductCard";
-import ProductCarousel from "../../components/product/ProductCarousel";
+import FeatureBox from "../../../components/common/FeatureBox";
+import Title from "../../../components/common/Title";
+import ProductCard from "../../../components/product/ProductCard";
+import ProductCarousel from "../../../components/product/ProductCarousel";
 
 const BestSellers = () => {
   return (

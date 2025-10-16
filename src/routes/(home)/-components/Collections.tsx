@@ -1,6 +1,6 @@
-import FeatureBox from "../../components/common/FeatureBox";
-import Image from "../../components/common/Image";
-import Title from "../../components/common/Title";
+import FeatureBox from "../../../components/common/FeatureBox";
+import Image from "../../../components/common/Image";
+import Title from "../../../components/common/Title";
 
 const Collections = () => {
   return (
