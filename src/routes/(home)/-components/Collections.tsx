@@ -37,15 +37,15 @@ const CollectionCard = ({
   href: string;
 }) => {
   return (
-    <div className="border border-[#E5E7EB] rounded-[16px] p-[40px] w-full flex justify-between divide-x-2 divide-[#E5E7EB] gap-3 items-center">
+    <div className="border border-gray-450 rounded-[16px] p-[40px] w-full flex justify-between divide-x-2 divide-gray-450 gap-3 items-center">
       <div className="w-full">
-        <p className="text-[24px]/[32px] font-semibold">{title}</p>
-        <p className="text-[14px]/[20px] text-[#4B5563]">{subtitle}</p>
+        <p className="text-c-xl font-semibold">{title}</p>
+        <p className="text-c-sm text-body-text">{subtitle}</p>
       </div>
       <div className="min-w-[114px]">
         <a
           href={href}
-          className="text-[#4B5563] text-[14px]/[20px] flex gap-2 font-medium uppercase"
+          className="text-body-text text-c-sm flex gap-2 font-medium uppercase"
         >
           SHOP NOW
           <Image src="/icons/arrow-right.svg" alt="right arrow icon" />

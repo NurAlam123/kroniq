@@ -6,7 +6,7 @@ const SliderButton = ({
 }: { active?: boolean } & ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <button
-      className={`size-4 rounded-full ${active ? "bg-[#111827]" : "bg-[#111827]/50"}`}
+      className={`size-4 rounded-full ${active ? "bg-primary" : "bg-primary/50"}`}
       {...props}
     ></button>
   );

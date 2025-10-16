@@ -3,7 +3,7 @@ import Image from "../../../components/common/Image";
 const BrandInfo = () => {
   return (
     <div className="h-[182] py-[52px]">
-      <div className="border rounded-[16px] border-[#e5e7eb] flex px-10 py-6 justify-between divide-x divide-[#E5E7EB]">
+      <div className="border rounded-[16px] border-gray-450 flex px-10 py-6 justify-between divide-x divide-gray-450">
         <BrandInfoCard
           src="/icons/truck.svg"
           alt="shipping truck icon"
@@ -50,8 +50,8 @@ const BrandInfoCard = ({
         <Image src={src} alt={alt} width={24} height={24} />
       </div>
       <div>
-        <p className="text-[18px]/[28px] font-semibold">{title}</p>
-        <p className="text-[14px]/[20px] text-[#4B5563]">{subtitle}</p>
+        <p className="text-c-md font-semibold">{title}</p>
+        <p className="text-c-sm text-body-text">{subtitle}</p>
       </div>
     </div>
   );

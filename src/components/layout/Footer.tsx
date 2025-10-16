@@ -4,7 +4,7 @@ import Image from "../common/Image";
 const Footer = () => {
   return (
     <footer className="bg-white">
-      <div className="border-y border-[#e5e7eb]">
+      <div className="border-y border-gray-450">
         <div className="max-screen py-[60px] flex justify-between">
           <div className="w-full">
             <Logo />
@@ -15,7 +15,7 @@ const Footer = () => {
                 <li key={`social-${alt}`}>
                   <a
                     href={href}
-                    className="flex gap-2 text-[16px]/[24px] text-[#4b5563]"
+                    className="flex gap-2 text-c-base text-body-text w-fit hover:text-black"
                   >
                     <Image src={src} alt={alt} width={24} height={24} />
                     {title}
@@ -28,14 +28,12 @@ const Footer = () => {
           <div className="w-full flex justify-between">
             {/* Getting started */}
             <div>
-              <p className="text-[16px]/[24px] font-semibold mb-5">
-                Getting Started
-              </p>
+              <p className="text-c-base font-semibold mb-5">Getting Started</p>
               <ul className="space-y-4">
                 {links.gettingStarted.map(({ href, title }, i) => (
                   <li
                     key={`getting-started-link-${i}`}
-                    className="text-[16px]/[24px] text-[#4b5563]"
+                    className="text-c-base text-body-text hover:text-black"
                   >
                     <a href={href}>{title}</a>
                   </li>
@@ -45,12 +43,12 @@ const Footer = () => {
 
             {/* Explore */}
             <div>
-              <p className="text-[16px]/[24px] font-semibold mb-5">Explore</p>
+              <p className="text-c-base font-semibold mb-5">Explore</p>
               <ul className="space-y-4">
                 {links.explore.map(({ href, title }, i) => (
                   <li
                     key={`getting-started-link-${i}`}
-                    className="text-[16px]/[24px] text-[#4b5563]"
+                    className="text-c-base text-body-text hover:text-black"
                   >
                     <a href={href}>{title}</a>
                   </li>
@@ -60,12 +58,12 @@ const Footer = () => {
 
             {/* Community */}
             <div>
-              <p className="text-[16px]/[24px] font-semibold mb-5">Community</p>
+              <p className="text-c-base font-semibold mb-5">Community</p>
               <ul className="space-y-4">
                 {links.community.map(({ href, title }, i) => (
                   <li
                     key={`getting-started-link-${i}`}
-                    className="text-[16px]/[24px] text-[#4b5563]"
+                    className="text-c-base text-body-text hover:text-black"
                   >
                     <a href={href}>{title}</a>
                   </li>
@@ -76,7 +74,7 @@ const Footer = () => {
         </div>
       </div>
       <div className=" max-screen flex justify-between items-center py-8">
-        <p className="text-[16px]/[24px] text-[#4b5563]">
+        <p className="text-c-base text-body-text">
           Kroniq eCommerce. &copy; 2025
         </p>
         <ul className="flex gap-1">

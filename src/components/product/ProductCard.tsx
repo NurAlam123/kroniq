@@ -13,9 +13,7 @@ const ProductCard = () => {
             width={16}
             height={16}
           />
-          <p className="text-[12px]/[16px] text-[#4B5563] select-none">
-            50% Discount
-          </p>
+          <p className="text-c-xs text-body-text select-none">50% Discount</p>
         </div>
 
         <div className="rounded-[16px] overflow-hidden w-(--card-width)">
@@ -37,14 +35,12 @@ const ProductCard = () => {
       <div className="mt-5 px-4">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-[16px]/[24px] font-semibold">
-              Black Automatic Watch
-            </p>
-            <p className="text-[#4B5563] text-[14px]/[20px]">Accessories</p>
+            <p className="text-c-base font-semibold">Black Automatic Watch</p>
+            <p className="text-body-text text-c-sm">Accessories</p>
           </div>
           <div className="text-end">
-            <p className="text-[16px]/[24px] font-semibold">$169.99 </p>
-            <p className="text-[#4B5563] text-[14px]/[20px] line-through select-none">
+            <p className="text-c-base font-semibold">$169.99 </p>
+            <p className="text-body-text text-c-sm line-through select-none">
               $199.99
             </p>
           </div>
@@ -58,7 +54,7 @@ const ProductCard = () => {
             width={14}
             height={14}
           />
-          <p className="text-[14px]/[20px] text-[#4B5563]">
+          <p className="text-c-sm text-body-text">
             <span>4.9</span> (<span>98</span>)
           </p>
         </div>

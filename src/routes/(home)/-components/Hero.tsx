@@ -15,10 +15,10 @@ const Hero = () => {
 
       <div className="max-screen w-full h-full flex items-center justify-start">
         <div className="w-[632px] flex flex-col gap-6">
-          <p className="text-[20px]/[28px] font-medium text-[#4b5563]">
+          <p className="text-c-lg font-medium text-body-text">
             Starting from: $49.99
           </p>
-          <h1 className="text-[64px]/[72px] font-semibold">
+          <h1 className="text-c-4xl font-semibold">
             Exclusive collection for everyone
           </h1>
           <Button className="gap-[10px] px-9">

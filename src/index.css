@@ -2,6 +2,12 @@
 
 @theme {
   --container-max: 1536px;
+
+  --color-primary: #111827;
+  --color-body-text: #4b5563;
+  --color-vibrant: #0ea5e9;
+  --color-gray-450: #e5e7eb;
+  --color-gray-150: #f8f8f8;
 }
 
 :root {
@@ -13,6 +19,44 @@
     max-width: 1536px;
     margin-inline: auto;
   }
+
+  /* Typography */
+  .text-c-4xl {
+    font-size: 64px;
+    line-height: 72px;
+  }
+  .text-c-3xl {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .text-c-2xl {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .text-c-xl {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .text-c-lg {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .text-c-md {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .text-c-base {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .text-c-sm {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .text-c-xs {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }
 
 @utility scrollbar-none {
@@ -21,3 +65,9 @@
     display: none;
   }
 }
+
+/* Typography */
+/* @utility text-* { */
+/*   font-size: calc(--value(integer) * 1px); */
+/*   line-height: calc(--modifier(integer, *) * 1px); */
+/* } */
