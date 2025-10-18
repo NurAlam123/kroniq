@@ -10,12 +10,15 @@ import ProductImagePreview from "./-components/ProductImagePreview";
 import Title from "../../components/common/Title";
 import ProductCarousel from "../../components/product/ProductCarousel";
 import ProductCard from "../../components/product/ProductCard";
+import { useState } from "react";
 
 export const Route = createFileRoute("/product/$productID")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
+  const [count, setCount] = useState(1);
+
   return (
     <div className="py-[40px] max-screen px-[120px] space-y-24 pb-24">
       <div className="flex gap-8">
@@ -38,10 +41,10 @@ function RouteComponent() {
             <SizeSelector />
 
             {/* Add to cart button */}
-            <AddToCart />
+            <AddToCart count={count} setCount={setCount} />
 
             {/* Total */}
-            <TotalCost />
+            <TotalCost price={169.99} quantity={count} tax={0} />
           </div>
         </div>
       </div>

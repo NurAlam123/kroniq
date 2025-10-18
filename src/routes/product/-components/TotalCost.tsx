@@ -1,16 +1,29 @@
 import Seperator from "../../../components/common/Seperator";
 
-const TotalCost = () => {
+const TotalCost = ({
+  price,
+  quantity,
+  tax,
+}: {
+  price: number;
+  quantity: number;
+  tax: number;
+}) => {
+  const totalWithoutTax = price * quantity;
+  const totalWithTax = totalWithoutTax + tax;
+
   return (
     <div className="space-y-4">
       <div className="space-y-[10px]">
         <div className="flex justify-between items-center text-c-base text-body-text">
-          <p>$169.99 x 1</p>
-          <p>$169.99</p>
+          <p>
+            ${price} x {quantity}
+          </p>
+          <p>${totalWithoutTax}</p>
         </div>
         <div className="flex justify-between items-center text-c-base text-body-text">
           <p>Tax estimate</p>
-          <p>$0</p>
+          <p>${tax}</p>
         </div>
       </div>
 
@@ -18,7 +31,7 @@ const TotalCost = () => {
 
       <div className="flex justify-between items-center text-c-base text-primary font-semibold">
         <p>Total</p>
-        <p>$169.99</p>
+        <p>${totalWithTax}</p>
       </div>
     </div>
   );

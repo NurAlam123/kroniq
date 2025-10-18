@@ -1,10 +1,14 @@
-import { useState } from "react";
 import QuantitySelector from "../../../components/common/QuantitySelector";
 import Button from "../../../components/common/Button";
 import ShoppingBag from "../../../assets/icons/ShoppingBag";
 
-const AddToCart = () => {
-  const [count, setCount] = useState(1);
+const AddToCart = ({
+  count,
+  setCount,
+}: {
+  count: number;
+  setCount: (value: number) => void;
+}) => {
   return (
     <div className="flex justify-between items-center">
       <QuantitySelector count={count} setCount={setCount} />
