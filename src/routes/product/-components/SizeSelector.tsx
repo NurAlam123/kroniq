@@ -4,6 +4,8 @@ import { cn } from "../../../lib/utils";
 const SizeSelector = () => {
   const [selectedSize, setSelectedSize] = useState("S");
 
+  const AVAILABLE_SIZES = ["S", "M", "L", "XL"];
+
   return (
     <div>
       <p className="text-c-base font-semibold">Size: {selectedSize}</p>
@@ -13,11 +15,12 @@ const SizeSelector = () => {
             key={`size-${size}`}
             onClick={() => setSelectedSize(size)}
             className={cn(
-              "w-[72px] h-[44px] font-semibold rounded-[12px] transition-all active:scale-[0.98] cursor-pointer",
+              "w-[72px] h-[44px] font-semibold rounded-[12px] transition-all not-disabled:active:scale-95 not-disabled:cursor-pointer will-change-transform disabled:text-body-text/40",
               selectedSize === size
-                ? "bg-vibrant text-white"
+                ? "bg-vibrant text-white border border-white"
                 : "text-body-text border border-gray-450",
             )}
+            disabled={!AVAILABLE_SIZES.includes(size)}
           >
             {size}
           </button>
