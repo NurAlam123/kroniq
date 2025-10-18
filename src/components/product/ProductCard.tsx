@@ -1,12 +1,13 @@
+import { Link } from "@tanstack/react-router";
 import Image from "../common/Image";
 
 const ProductCard = () => {
   return (
-    <div className="w-(--card-width) max-w-[384px] h-[448px]">
+    <div className="w-(--card-width) max-w-[384px] h-[448px] group/card">
       {/* product image */}
       <div className="relative w-fit">
         {/* discount tag */}
-        <div className="absolute px-3.5 py-2 max-w-[132px] w-fit bg-white rounded-full flex items-center justify-center gap-2 top-3.5 left-3.5">
+        <div className="absolute px-3.5 py-2 max-w-[132px] w-fit bg-white rounded-full flex items-center justify-center gap-2 top-3.5 left-3.5 z-10">
           <Image
             src="/icons/discount.svg"
             alt="discount icon"
@@ -17,11 +18,17 @@ const ProductCard = () => {
         </div>
 
         <div className="rounded-[16px] overflow-hidden w-(--card-width)">
-          <Image src="/watch.png" alt="product image" className="w-full" />
+          <Link to="/product/$productID" params={{ productID: "sample" }}>
+            <Image
+              src="/watch.png"
+              alt="product image"
+              className="w-full group-hover/card:scale-110 transition-transform"
+            />
+          </Link>
         </div>
 
         {/* add to card btn */}
-        <button className="absolute top-3 right-3 bg-white w-9 h-9 rounded-full flex justify-center items-center active:scale-95">
+        <button className="absolute top-3 right-3 bg-white w-9 h-9 rounded-full flex justify-center items-center active:scale-[.98] translate-z-0 backface-hidden">
           <Image
             src="/icons/shopping-bag.svg"
             alt="shopping bag icon"

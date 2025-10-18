@@ -10,7 +10,7 @@ import ProductImagePreview from "./-components/ProductImagePreview";
 import Title from "../../components/common/Title";
 import ProductCarousel from "../../components/product/ProductCarousel";
 import ProductCard from "../../components/product/ProductCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/product/$productID")({
   component: RouteComponent,
@@ -19,15 +19,17 @@ export const Route = createFileRoute("/product/$productID")({
 function RouteComponent() {
   const [count, setCount] = useState(1);
 
+  useEffect(() => {
+    scrollTo({ top: 0 });
+  }, []);
+
   return (
     <div className="py-[40px] max-screen px-[120px] space-y-24 pb-24">
       <div className="flex gap-8">
         <div className="grid gap-[52px]">
           {/* Product Images */}
           <ProductImagePreview />
-
           <Seperator />
-
           {/* Product description */}
           <ProductDescription />
         </div>
@@ -36,13 +38,10 @@ function RouteComponent() {
         <div className="w-full">
           <div className="border border-gray-450 w-[460px] h-[462px] rounded-[16px] p-[32px] space-y-8">
             <PriceAndRatings />
-
             {/* Size selection */}
             <SizeSelector />
-
             {/* Add to cart button */}
             <AddToCart count={count} setCount={setCount} />
-
             {/* Total */}
             <TotalCost price={169.99} quantity={count} tax={0} />
           </div>

@@ -73,7 +73,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className=" max-screen flex justify-between items-center py-8">
+      <div className=" max-screen px-[120px] flex justify-between items-center py-8">
         <p className="text-c-base text-body-text">
           Kroniq eCommerce. &copy; 2025
         </p>

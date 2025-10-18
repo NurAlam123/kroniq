@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import Logo from "../../assets/Logo";
 import Image from "../common/Image";
 
@@ -5,7 +6,9 @@ const Navbar = () => {
   return (
     <div className="bg-white border-b border-gray-450">
       <div className="max-screen h-[100px] flex items-center px-[120px] justify-between">
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
         <SearchBar />
         <ActionButton />
       </div>

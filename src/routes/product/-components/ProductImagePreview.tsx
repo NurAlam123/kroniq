@@ -15,8 +15,9 @@ const ProductImagePreview = () => {
   return (
     <div className="flex gap-6 mb-3">
       <div className="space-y-4">
-        {PRODUCT_IMAGES.map((src) => (
+        {PRODUCT_IMAGES.map((src, i) => (
           <div
+            key={`product-image-${i}`}
             role="presentation"
             className={cn(
               "w-[140px] overflow-hidden rounded-[16px]",

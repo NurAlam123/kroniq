@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import FeatureBox from "../../../components/common/FeatureBox";
 import Image from "../../../components/common/Image";
 import Title from "../../../components/common/Title";
@@ -11,16 +12,20 @@ const Collections = () => {
       />
 
       <div className="flex gap-5">
-        <CollectionCard title="For Men's" subtitle="Starting at $24" href="#" />
+        <CollectionCard
+          title="For Men's"
+          subtitle="Starting at $24"
+          href="/shop"
+        />
         <CollectionCard
           title="For Women's"
           subtitle="Starting at $19"
-          href="#"
+          href="/shop"
         />
         <CollectionCard
           title="Accessories"
           subtitle="Explore accessories"
-          href="#"
+          href="/shop"
         />
       </div>
     </FeatureBox>
@@ -43,13 +48,13 @@ const CollectionCard = ({
         <p className="text-c-sm text-body-text">{subtitle}</p>
       </div>
       <div className="min-w-[114px]">
-        <a
-          href={href}
+        <Link
+          to={href}
           className="text-body-text text-c-sm flex gap-2 font-medium uppercase"
         >
           SHOP NOW
           <Image src="/icons/arrow-right.svg" alt="right arrow icon" />
-        </a>
+        </Link>
       </div>
     </div>
   );
