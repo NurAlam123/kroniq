@@ -4,12 +4,10 @@ import Image from "../common/Image";
 const Navbar = () => {
   return (
     <div className="bg-white border-b border-gray-450">
-      <div className="@container max-screen">
-        <div className="h-[100px] flex items-center @max-max:px-[120px] justify-between">
-          <Logo />
-          <SearchBar />
-          <ActionButton />
-        </div>
+      <div className="max-screen h-[100px] flex items-center px-[120px] justify-between">
+        <Logo />
+        <SearchBar />
+        <ActionButton />
       </div>
     </div>
   );

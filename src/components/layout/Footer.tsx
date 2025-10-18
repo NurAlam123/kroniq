@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-white">
       <div className="border-y border-gray-450">
-        <div className="max-screen py-[60px] flex justify-between">
+        <div className="max-screen px-[120px] py-[60px] flex justify-between">
           <div className="w-full">
             <Logo />
 

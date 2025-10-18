@@ -13,7 +13,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="max-screen w-full h-full flex items-center justify-start">
+      <div className="max-screen px-[120px] w-full h-full flex items-center justify-start">
         <div className="w-[632px] flex flex-col gap-6">
           <p className="text-c-lg font-medium text-body-text">
             Starting from: $49.99

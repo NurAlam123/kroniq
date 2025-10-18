@@ -14,7 +14,7 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <div className="max-screen">
+      <div className="max-screen px-[120px]">
         <BrandInfo />
         <Collections />
         <Recommendations />
