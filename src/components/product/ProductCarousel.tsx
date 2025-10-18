@@ -58,7 +58,7 @@ const ProductCarousel = ({
       </div>
 
       {/* carousel action button */}
-      {cards > 4 && (
+      {Children.count(children) > 4 && (
         <div className="flex gap-1 justify-center items-center mt-8">
           {createSliderButton({
             current,

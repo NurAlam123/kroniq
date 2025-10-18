@@ -54,7 +54,6 @@ function RouteComponent() {
             <ProductCard></ProductCard>
             <ProductCard></ProductCard>
             <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
           </ProductCarousel>
         </div>
       </div>
