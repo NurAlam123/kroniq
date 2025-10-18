@@ -48,8 +48,8 @@ const ProductCarousel = ({
         className="h-(--container-height) grid grid-flow-col auto-rows-(--card-width) gap-3.5 overflow-x-auto scroll-smooth scrollbar-none"
         style={
           {
-            "--card-width": "370px",
-            "--container-height": "560px",
+            "--card-width": "310px",
+            "--container-height": "448px",
           } as React.CSSProperties
         }
         onScrollEnd={scrollEndHandler}
@@ -58,14 +58,16 @@ const ProductCarousel = ({
       </div>
 
       {/* carousel action button */}
-      <div className="flex gap-1 justify-center items-center mt-8">
-        {createSliderButton({
-          current,
-          buttonHandler,
-          cards,
-          count: Children.count(children),
-        })}
-      </div>
+      {cards > 4 && (
+        <div className="flex gap-1 justify-center items-center mt-8">
+          {createSliderButton({
+            current,
+            buttonHandler,
+            cards,
+            count: Children.count(children),
+          })}
+        </div>
+      )}
     </div>
   );
 };
