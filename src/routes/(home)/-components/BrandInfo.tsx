@@ -2,7 +2,7 @@ import Image from "../../../components/common/Image";
 
 const BrandInfo = () => {
   return (
-    <div className="h-[182] py-[52px]">
+    <div className="h-full lg:h-[182px] py-[52px]">
       <p className="text-c-base font-semibold text-primary lg:hidden mb-6">
         Kroniq&reg; always with you
       </p>
