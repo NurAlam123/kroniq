@@ -31,7 +31,7 @@ function RouteComponent() {
           {/* Product Images */}
           <ProductImagePreview />
 
-          <div className="mt-[12px] space-y-8">
+          <div className="mt-[12px] space-y-8 lg:hidden">
             <ProductTitle title="Black Automatic Watch" />
             <PriceAndRatings />
             <SizeSelector />
@@ -44,7 +44,7 @@ function RouteComponent() {
         </div>
 
         {/* Add to cart section // Desktop */}
-        <div className="w-full hidden">
+        <div className="w-full hidden lg:block">
           <div className="border border-gray-450 w-[460px] h-[462px] rounded-[16px] p-[32px] space-y-8">
             <PriceAndRatings />
             {/* Size selection */}
