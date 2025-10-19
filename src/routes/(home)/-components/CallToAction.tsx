@@ -21,7 +21,9 @@ const CallToAction = () => {
           <p className="text-c-lg text-body-text font-medium mb-6">
             Starting from: $59.99
           </p>
-          <Button className="px-8">Shop now</Button>
+          <Button className="px-8">
+            <span>Shop now</span>
+          </Button>
         </div>
       </div>
     </div>

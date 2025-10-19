@@ -1,4 +1,5 @@
 import type { HTMLProps } from "react";
+import { cn } from "../../lib/utils";
 
 const FeatureBox = ({
   children,
@@ -6,7 +7,7 @@ const FeatureBox = ({
   ...props
 }: HTMLProps<HTMLDivElement>) => {
   return (
-    <div className={`py-[88px] space-y-10 ${className}`} {...props}>
+    <div className={cn("py-[88px] space-y-10", className)} {...props}>
       {children}
     </div>
   );

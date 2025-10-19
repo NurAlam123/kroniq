@@ -14,7 +14,7 @@ const AddToCart = ({
       <QuantitySelector count={count} setCount={setCount} />
       <Button>
         <ShoppingBag className="fill-white mb-1" />
-        <span className="block">Add to cart</span>
+        <span>Add to cart</span>
       </Button>
     </div>
   );

@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes } from "react";
+import { cn } from "../../lib/utils";
 
 const SliderButton = ({
   active = false,
@@ -6,7 +7,10 @@ const SliderButton = ({
 }: { active?: boolean } & ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <button
-      className={`size-4 rounded-full ${active ? "bg-primary" : "bg-primary/50"}`}
+      className={cn(
+        "size-4 rounded-full bg-primary/50",
+        active && "bg-primary",
+      )}
       {...props}
     ></button>
   );
