@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import Logo from "../../assets/Logo";
 import Image from "../common/Image";
 import { cn } from "../../lib/utils";
-import { useState } from "react";
 
 const Navbar = () => {
   return (

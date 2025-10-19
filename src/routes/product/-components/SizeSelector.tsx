@@ -11,7 +11,7 @@ const SizeSelector = () => {
       <p className="text-c-sm lg:text-c-base font-semibold">
         Size: {selectedSize}
       </p>
-      <div className="flex mt-[12px] gap-[8.5px]">
+      <div className="flex flex-wrap mt-[12px] gap-[8.5px]">
         {["S", "M", "L", "XL", "2XL"].map((size) => (
           <button
             key={`size-${size}`}
