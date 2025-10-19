@@ -5,19 +5,23 @@ const Footer = () => {
   return (
     <footer className="bg-white">
       <div className="border-y border-gray-450">
-        <div className="max-screen px-[120px] py-[60px] flex justify-between">
-          <div className="w-full">
+        <div className="max-screen p-6 lg:px-[120px] lg:py-[60px] flex max-lg:flex-col justify-between max-lg:gap-[60px]">
+          <div className="w-full max-lg:mt-[24px]">
             <Logo />
 
             {/* Socials */}
-            <ul className="mt-5 space-y-3.5">
+            <ul className="mt-5 space-y-3 lg:space-y-3.5">
               {socialLinks.map(({ href, src, title, alt }) => (
                 <li key={`social-${alt}`}>
                   <a
                     href={href}
-                    className="flex gap-2 text-c-base text-body-text w-fit hover:text-black"
+                    className="flex gap-2 text-c-sm lg:text-c-base text-body-text w-fit hover:text-black items-center"
                   >
-                    <Image src={src} alt={alt} width={24} height={24} />
+                    <Image
+                      src={src}
+                      alt={alt}
+                      className="size-[16px] lg:size-[24px]"
+                    />
                     {title}
                   </a>
                 </li>
@@ -25,15 +29,17 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="w-full flex justify-between">
+          <div className="w-full flex max-lg:flex-col justify-between max-lg:gap-[60px]">
             {/* Getting started */}
             <div>
-              <p className="text-c-base font-semibold mb-5">Getting Started</p>
-              <ul className="space-y-4">
+              <p className="text-c-sm lg:text-c-base font-semibold mb-5">
+                Getting Started
+              </p>
+              <ul className="space-y-3 lg:space-y-4">
                 {links.gettingStarted.map(({ href, title }, i) => (
                   <li
                     key={`getting-started-link-${i}`}
-                    className="text-c-base text-body-text hover:text-black"
+                    className="text-c-sm lg:text-c-base text-body-text hover:text-black"
                   >
                     <a href={href}>{title}</a>
                   </li>
@@ -43,12 +49,14 @@ const Footer = () => {
 
             {/* Explore */}
             <div>
-              <p className="text-c-base font-semibold mb-5">Explore</p>
-              <ul className="space-y-4">
+              <p className="text-c-sm lg:text-c-base font-semibold mb-5">
+                Explore
+              </p>
+              <ul className="space-y-3 lg:space-y-4">
                 {links.explore.map(({ href, title }, i) => (
                   <li
                     key={`getting-started-link-${i}`}
-                    className="text-c-base text-body-text hover:text-black"
+                    className="text-c-sm lg:text-c-base text-body-text hover:text-black"
                   >
                     <a href={href}>{title}</a>
                   </li>
@@ -58,12 +66,14 @@ const Footer = () => {
 
             {/* Community */}
             <div>
-              <p className="text-c-base font-semibold mb-5">Community</p>
-              <ul className="space-y-4">
+              <p className="text-c-sm lg:text-c-base font-semibold mb-5">
+                Community
+              </p>
+              <ul className="space-y-3 lg:space-y-4">
                 {links.community.map(({ href, title }, i) => (
                   <li
                     key={`getting-started-link-${i}`}
-                    className="text-c-base text-body-text hover:text-black"
+                    className="text-c-sm lg:text-c-base text-body-text hover:text-black"
                   >
                     <a href={href}>{title}</a>
                   </li>
@@ -73,8 +83,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className=" max-screen px-[120px] flex justify-between items-center py-8">
-        <p className="text-c-base text-body-text">
+      <div className=" max-screen px-4 py-5 lg:px-[120px] flex max-lg:flex-col justify-between items-center lg:py-8 max-lg:gap-3">
+        <p className="text-c-sm lg:text-c-base text-body-text">
           Kroniq eCommerce. &copy; 2025
         </p>
         <ul className="flex gap-1">

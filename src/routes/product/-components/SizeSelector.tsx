@@ -17,7 +17,7 @@ const SizeSelector = () => {
             className={cn(
               "w-[72px] h-[44px] font-semibold rounded-[12px] transition-all not-disabled:active:scale-95 not-disabled:cursor-pointer will-change-transform disabled:text-body-text/40",
               selectedSize === size
-                ? "bg-vibrant text-white border border-white"
+                ? "bg-vibrant text-white border border-transparent"
                 : "text-body-text border border-gray-450",
             )}
             disabled={!AVAILABLE_SIZES.includes(size)}
