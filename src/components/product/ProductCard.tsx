@@ -3,7 +3,7 @@ import Image from "../common/Image";
 
 const ProductCard = () => {
   return (
-    <div className="w-(--card-width) max-w-[384px] h-[448px] group/card">
+    <div className="w-(--card-width) max-w-[384px] h-[448px] group/card snap-center">
       {/* product image */}
       <div className="relative w-fit">
         {/* discount tag */}

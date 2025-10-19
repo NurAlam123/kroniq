@@ -8,7 +8,7 @@ const SliderButton = ({
   return (
     <button
       className={cn(
-        "size-4 rounded-full bg-primary/50",
+        "size-2 lg:size-4 rounded-full bg-primary/50",
         active && "bg-primary",
       )}
       {...props}

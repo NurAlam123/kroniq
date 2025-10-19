@@ -1,5 +1,6 @@
 import { Children, useRef, useState } from "react";
 import SliderButton from "../common/SliderButton";
+import { useMedia } from "../../hooks/useMedia";
 
 const ProductCarousel = ({
   children,
@@ -11,7 +12,9 @@ const ProductCarousel = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const indexRef = useRef<number>(null);
 
-  const cards = 4;
+  const isLarge = useMedia("(min-width: 1024px)");
+
+  const cards = isLarge ? 4 : 1;
   const gap = 14 * cards;
 
   const getContainerData = () => {
@@ -45,7 +48,7 @@ const ProductCarousel = ({
     <div>
       <div
         ref={containerRef}
-        className="h-(--container-height) grid grid-flow-col auto-rows-(--card-width) gap-3.5 overflow-x-auto scroll-smooth scrollbar-none"
+        className="max-lg:px-24 h-(--container-height) grid grid-flow-col auto-rows-(--card-width) gap-3.5 overflow-x-auto scroll-smooth scrollbar-none snap-x snap-mandatory overscroll-x-contain"
         style={
           {
             "--card-width": "310px",
@@ -59,7 +62,7 @@ const ProductCarousel = ({
 
       {/* carousel action button */}
       {Children.count(children) > 4 && (
-        <div className="flex gap-1 justify-center items-center mt-8">
+        <div className="hidden lg:flex gap-1 justify-center items-center mt-8">
           {createSliderButton({
             current,
             buttonHandler,
