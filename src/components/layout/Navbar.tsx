@@ -67,7 +67,7 @@ const ActionButton = () => {
   return (
     <div>
       <div className="relative">
-        <button popoverTarget="menu" className="[anchor-name:--menu]">
+        <button popoverTarget="menu" className="lg:hidden [anchor-name:--menu]">
           <Image src="/icons/hamburger-menu.svg" className="size-9" />
         </button>
 
