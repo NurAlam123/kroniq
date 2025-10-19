@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import Logo from "../../assets/Logo";
 import Image from "../common/Image";
+import { cn } from "../../lib/utils";
+import { useState } from "react";
 
 const Navbar = () => {
   return (
@@ -43,23 +45,44 @@ const SearchBar = () => {
   );
 };
 
+const Menu = ({ className }: { className?: string }) => {
+  return (
+    <div className={cn("flex items-center gap-6 justify-center", className)}>
+      <button className="cursor-pointer">
+        <Image src="/icons/user.svg" alt="user icon" width={24} height={24} />
+      </button>
+      <button
+        className="relative cursor-pointer"
+        onClick={() => console.log("HOHO")}
+      >
+        <Image src="/icons/cart.svg" alt="cart icon" width={24} height={24} />
+        <span className="absolute -top-2 -right-2 w-5 h-5 bg-blue-500 rounded-full text-white text-xs flex items-center justify-center font-medium">
+          3
+        </span>
+      </button>
+    </div>
+  );
+};
+
 const ActionButton = () => {
   return (
     <div>
-      <button className="lg:hidden">
-        <Image src="/icons/hamburger-menu.svg" className="size-9" />
-      </button>
+      <div className="relative">
+        <button popoverTarget="menu" className="[anchor-name:--menu]">
+          <Image src="/icons/hamburger-menu.svg" className="size-9" />
+        </button>
 
-      <div className="hidden lg:flex lg:items-center lg:gap-6 justify-center">
-        <button>
-          <Image src="/icons/user.svg" alt="user icon" width={24} height={24} />
-        </button>
-        <button className="relative">
-          <Image src="/icons/cart.svg" alt="cart icon" width={24} height={24} />
-          <span className="absolute -top-2 -right-2 w-5 h-5 bg-blue-500 rounded-full text-white text-xs flex items-center justify-center font-medium">
-            3
-          </span>
-        </button>
+        <div
+          popover="auto"
+          id="menu"
+          className="w-32 absolute p-4 bg-gray-150 border border-gray-450 shadow-sm [position-anchor:--menu] [position-area:bottom_left] rounded-2xl starting:scale-95 starting:opacity-0 transition-all scale-100 opacity-100"
+        >
+          <Menu />
+        </div>
+      </div>
+
+      <div className="hidden lg:block">
+        <Menu />
       </div>
     </div>
   );
