@@ -12,9 +12,9 @@ const AddToCart = ({
   return (
     <div className="flex justify-between items-center">
       <QuantitySelector count={count} setCount={setCount} />
-      <Button>
+      <Button className="max-lg:px-6 max-lg:py-[10px]">
         <ShoppingBag className="fill-white mb-1" />
-        <span>Add to cart</span>
+        <span className="max-lg:text-c-sm">Add to cart</span>
       </Button>
     </div>
   );

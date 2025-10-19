@@ -20,7 +20,7 @@ const QuantitySelector = ({
       </button>
 
       <div className="w-full h-full relative">
-        <p className="absolute text-c-base text-center font-medium select-none text-body-text inset-0">
+        <p className="absolute text-c-sm lg:text-c-base text-center font-medium select-none text-body-text inset-0">
           {count}
         </p>
       </div>
