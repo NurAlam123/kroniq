@@ -2,6 +2,7 @@ import { Link, useLocation } from "@tanstack/react-router";
 import Logo from "../../assets/Logo";
 import Image from "../common/Image";
 import { cn } from "../../lib/utils";
+import LoginIcon from "../../assets/icons/LoginIcon";
 
 const Navbar = () => {
   return (
@@ -54,25 +55,31 @@ const Menu = ({ className }: { className?: string }) => {
         className,
       )}
     >
-      <div className="space-y-2">
-        <Link
-          to="/"
-          className={cn(
-            "bg-blue-500 px-6 py-2 rounded-full text-white transition-all ease-in-out font-medium text-center block shadow-sm active:scale-95 hover:bg-blue-600 lg:hidden",
-            location.pathname === "/register" && "hidden",
-          )}
-        >
-          Register
-        </Link>
-
+      <div className="space-y-2 w-full">
         <Link
           to="/login"
           className={cn(
-            "block bg-white lg:bg-blue-500 px-6 py-2 rounded-full text-blue-500 lg:text-white transition-all ease-in-out font-medium text-center shadow-sm active:scale-95 hover:bg-gray-50 lg:hover:bg-blue-600",
+            "bg-white lg:bg-blue-500 px-6 py-2 rounded-full text-blue-500 lg:text-white transition-all ease-in-out font-medium text-center shadow-sm active:scale-95 hover:bg-gray-50 lg:hover:bg-blue-600 flex items-center justify-start gap-2 w-full",
             location.pathname === "/login" && "hidden",
           )}
         >
+          <LoginIcon className="size-5 max-lg:stroke-blue-500 stroke-white" />
           Login
+        </Link>
+
+        <Link
+          to="/"
+          className={cn(
+            "bg-blue-500 px-6 py-2 rounded-full text-white transition-all ease-in-out font-medium text-center flex items-center justify-start gap-2 shadow-sm active:scale-95 hover:bg-blue-600 lg:hidden",
+            location.pathname === "/register" && "hidden",
+          )}
+        >
+          <Image
+            src="/icons/register.svg"
+            alt="register icon"
+            className="w-5"
+          />
+          <span>Register</span>
         </Link>
       </div>
 
@@ -89,11 +96,12 @@ const Menu = ({ className }: { className?: string }) => {
 
       <CartButton className="max-lg:hidden" />
 
-      <div className="hidden">
+      <div className="hidden w-full">
         <Link
           to="/"
-          className="block w-full bg-red-500 px-6 py-2 rounded-full text-white transition-all ease-in-out font-medium text-center shadow-sm active:scale-95 hover:bg-red-600"
+          className="flex items-center justify-start gap-2 w-full bg-red-500 px-6 py-2 rounded-full text-white transition-all ease-in-out font-medium text-center shadow-sm active:scale-95 hover:bg-red-600"
         >
+          <Image src="/icons/logout.svg" alt="logout icon" className="w-5" />
           Logout
         </Link>
       </div>
@@ -106,14 +114,14 @@ const MenuButton = () => {
     <div className="max-lg:flex max-lg:justify-center max-lg:gap-4">
       <CartButton className="lg:hidden" />
       <div className="relative">
-        <button popoverTarget="menu" className="lg:hidden">
+        <button popoverTarget="menu" className="min-w-6 lg:hidden">
           <Image src="/icons/hamburger-menu.svg" className="size-9" />
         </button>
 
         <div
           popover="auto"
           id="menu"
-          className="w-32 absolute p-4 bg-gray-150 border border-gray-450 shadow-sm rounded-2xl top-20 left-full -translate-x-[calc(100%+10px)]"
+          className="w-48 absolute p-4 bg-gray-150 border border-gray-450 shadow-sm rounded-2xl top-20 left-full -translate-x-[calc(100%+10px)]"
         >
           <Menu />
         </div>
@@ -133,7 +141,7 @@ const CartButton = ({
   return (
     <button
       className={cn(
-        "relative cursor-pointer max-lg:flex max-lg:items-center max-lg:gap-2",
+        "relative cursor-pointer max-lg:flex max-lg:items-center max-lg:gap-2 min-w-6",
         className,
       )}
       {...props}
