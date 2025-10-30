@@ -2,16 +2,16 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import Input from "../../components/common/Input";
 import Button from "../../components/common/Button";
 
-export const Route = createFileRoute("/login/")({
+export const Route = createFileRoute("/register/")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
   return (
-    <div className="flex justify-center items-center mt-[40px] mb-[72px]">
-      <div className="w-[440px] h-[450px] max-lg:px-6">
+    <div className="flex justify-center h-full items-center mt-[40px] mb-[72px]">
+      <div className="w-[440px] h-full mb-[72px] max-lg:px-6">
         <h1 className="text-c-3xl text-primary font-semibold text-center mb-[60px]">
-          Login
+          Register
         </h1>
 
         <form className="space-y-6">
@@ -24,6 +24,13 @@ function RouteComponent() {
           />
           <Input
             label="Password"
+            type="password"
+            required
+            labelClassName="text-c-sm lg:text-c-base"
+            placeholder="********"
+          />
+          <Input
+            label="Confirm Password"
             type="password"
             required
             labelClassName="text-c-sm lg:text-c-base"
@@ -44,9 +51,9 @@ function RouteComponent() {
             </div>
 
             <p className="max-lg:text-c-sm text-body-text pt-6 text-center">
-              New user?{" "}
-              <Link to="/register" className="text-vibrant">
-                Create an account
+              Already a member?{" "}
+              <Link to="/login" className="text-vibrant">
+                Login
               </Link>
             </p>
           </div>

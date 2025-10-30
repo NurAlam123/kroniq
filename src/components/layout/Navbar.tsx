@@ -46,8 +46,6 @@ const SearchBar = () => {
 };
 
 const Menu = ({ className }: { className?: string }) => {
-  const location = useLocation();
-
   return (
     <div
       className={cn(
@@ -58,21 +56,15 @@ const Menu = ({ className }: { className?: string }) => {
       <div className="space-y-2 w-full">
         <Link
           to="/login"
-          className={cn(
-            "bg-white lg:bg-blue-500 px-6 py-2 rounded-full text-blue-500 lg:text-white transition-all ease-in-out font-medium text-center shadow-sm active:scale-95 hover:bg-gray-50 lg:hover:bg-blue-600 flex items-center justify-start gap-2 w-full",
-            location.pathname === "/login" && "hidden",
-          )}
+          className="bg-white lg:bg-blue-500 px-6 py-2 rounded-full text-blue-500 lg:text-white transition-all ease-in-out font-medium text-center shadow-sm active:scale-95 hover:bg-gray-50 lg:hover:bg-blue-600 flex items-center justify-start gap-2 w-full"
         >
           <LoginIcon className="size-5 max-lg:stroke-blue-500 stroke-white" />
           Login
         </Link>
 
         <Link
-          to="/"
-          className={cn(
-            "bg-blue-500 px-6 py-2 rounded-full text-white transition-all ease-in-out font-medium text-center flex items-center justify-start gap-2 shadow-sm active:scale-95 hover:bg-blue-600 lg:hidden",
-            location.pathname === "/register" && "hidden",
-          )}
+          to="/register"
+          className="bg-blue-500 px-6 py-2 rounded-full text-white transition-all ease-in-out font-medium text-center flex items-center justify-start gap-2 shadow-sm active:scale-95 hover:bg-blue-600 lg:hidden"
         >
           <Image
             src="/icons/register.svg"
@@ -110,10 +102,19 @@ const Menu = ({ className }: { className?: string }) => {
 };
 
 const MenuButton = () => {
+  const location = useLocation();
+
   return (
     <div className="max-lg:flex max-lg:justify-center max-lg:gap-4">
       <CartButton className="lg:hidden" />
-      <div className="relative">
+      <div
+        className={cn(
+          "relative",
+          (location.pathname === "/login" ||
+            location.pathname === "/register") &&
+            "hidden",
+        )}
+      >
         <button popoverTarget="menu" className="min-w-6 lg:hidden">
           <Image src="/icons/hamburger-menu.svg" className="size-9" />
         </button>
