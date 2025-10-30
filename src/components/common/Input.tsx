@@ -4,6 +4,7 @@ import { cn } from "../../lib/utils";
 interface InputProps extends HTMLProps<HTMLInputElement> {
   label: string;
   divClassName?: string;
+  labelClassName?: string;
 }
 
 const Input = ({
@@ -11,6 +12,7 @@ const Input = ({
   name,
   className,
   divClassName,
+  labelClassName,
   type,
   ...props
 }: InputProps) => {
@@ -18,7 +20,7 @@ const Input = ({
     <div className={cn("flex flex-col gap-2", divClassName)}>
       <label
         htmlFor={name}
-        className="text-c-sm lg:text-c-base text-primary font-semibold"
+        className={cn("text-c-sm lg:text-c-base text-primary font-semibold")}
       >
         {label}
       </label>

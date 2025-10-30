@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as LoginIndexRouteImport } from './routes/login/index'
 import { Route as CheckoutIndexRouteImport } from './routes/checkout/index'
 import { Route as homeIndexRouteImport } from './routes/(home)/index'
 import { Route as ProductProductIDRouteImport } from './routes/product/$productID'
 
+const LoginIndexRoute = LoginIndexRouteImport.update({
+  id: '/login/',
+  path: '/login/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CheckoutIndexRoute = CheckoutIndexRouteImport.update({
   id: '/checkout/',
   path: '/checkout/',
@@ -33,34 +39,45 @@ export interface FileRoutesByFullPath {
   '/product/$productID': typeof ProductProductIDRoute
   '/': typeof homeIndexRoute
   '/checkout': typeof CheckoutIndexRoute
+  '/login': typeof LoginIndexRoute
 }
 export interface FileRoutesByTo {
   '/product/$productID': typeof ProductProductIDRoute
   '/': typeof homeIndexRoute
   '/checkout': typeof CheckoutIndexRoute
+  '/login': typeof LoginIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/product/$productID': typeof ProductProductIDRoute
   '/(home)/': typeof homeIndexRoute
   '/checkout/': typeof CheckoutIndexRoute
+  '/login/': typeof LoginIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/product/$productID' | '/' | '/checkout'
+  fullPaths: '/product/$productID' | '/' | '/checkout' | '/login'
   fileRoutesByTo: FileRoutesByTo
-  to: '/product/$productID' | '/' | '/checkout'
-  id: '__root__' | '/product/$productID' | '/(home)/' | '/checkout/'
+  to: '/product/$productID' | '/' | '/checkout' | '/login'
+  id: '__root__' | '/product/$productID' | '/(home)/' | '/checkout/' | '/login/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   ProductProductIDRoute: typeof ProductProductIDRoute
   homeIndexRoute: typeof homeIndexRoute
   CheckoutIndexRoute: typeof CheckoutIndexRoute
+  LoginIndexRoute: typeof LoginIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/login/': {
+      id: '/login/'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/checkout/': {
       id: '/checkout/'
       path: '/checkout'
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProductProductIDRoute: ProductProductIDRoute,
   homeIndexRoute: homeIndexRoute,
   CheckoutIndexRoute: CheckoutIndexRoute,
+  LoginIndexRoute: LoginIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

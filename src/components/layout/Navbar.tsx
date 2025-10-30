@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import Logo from "../../assets/Logo";
 import Image from "../common/Image";
 import { cn } from "../../lib/utils";
@@ -45,6 +45,8 @@ const SearchBar = () => {
 };
 
 const Menu = ({ className }: { className?: string }) => {
+  const location = useLocation();
+
   return (
     <div
       className={cn(
@@ -55,14 +57,20 @@ const Menu = ({ className }: { className?: string }) => {
       <div className="space-y-2">
         <Link
           to="/"
-          className="bg-blue-500 px-6 py-2 rounded-full text-white transition-all ease-in-out font-medium text-center block shadow-sm active:scale-95 hover:bg-blue-600 lg:hidden"
+          className={cn(
+            "bg-blue-500 px-6 py-2 rounded-full text-white transition-all ease-in-out font-medium text-center block shadow-sm active:scale-95 hover:bg-blue-600 lg:hidden",
+            location.pathname === "/register" && "hidden",
+          )}
         >
           Register
         </Link>
 
         <Link
-          to="/"
-          className="block bg-white lg:bg-blue-500 px-6 py-2 rounded-full text-blue-500 lg:text-white transition-all ease-in-out font-medium text-center shadow-sm active:scale-95 hover:bg-gray-50 lg:hover:bg-blue-600"
+          to="/login"
+          className={cn(
+            "block bg-white lg:bg-blue-500 px-6 py-2 rounded-full text-blue-500 lg:text-white transition-all ease-in-out font-medium text-center shadow-sm active:scale-95 hover:bg-gray-50 lg:hover:bg-blue-600",
+            location.pathname === "/login" && "hidden",
+          )}
         >
           Login
         </Link>
