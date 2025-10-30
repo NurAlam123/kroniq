@@ -7,7 +7,7 @@ import LoginIcon from "../../assets/icons/LoginIcon";
 const Navbar = () => {
   return (
     <div className="bg-white border-b border-gray-450">
-      <div className="lg:max-screen h-[100px] flex items-center px-[16px] max-lg:gap-[32px] lg:px-[120px] justify-between">
+      <div className="max-screen h-[100px] flex items-center px-[16px] max-lg:gap-[32px] lg:px-[120px] justify-between">
         <Link to="/">
           <div className="hidden lg:block">
             <Logo />
